@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<!--[if IE 8]>
+<html lang="zh-CN" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]>
+<html lang="zh-CN" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8"/>
+    <title>用户登录</title>
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <style>
+        body {
+            /*background: url("../../static/tag/img/new_beijing1-1.jpg");*/
+            /*background: url("../../static/tag/img/Starry.jpg");*/
+            background: url("/static/images/bg2.jpg");
+            background-size: cover;
+            font-family: "Microsoft YaHei", "å®‹ä½“", "Segoe UI", "Lucida Grande", Helvetica, Arial, sans-serif, FreeSans, Arimo;
+            background-position: 50% -17%;
+            /*background-size: 100% 100%;*/
+        }
+        html,body{
+            margin:0px;
+            width:100%;
+            height:100%;
+            overflow:hidden;
+        }
+
+        #canvas{
+            position:absolute;
+            width:100%;
+            height:100%;
+        }
+
+        input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+            color: #fff;
+        }
+
+        input:-moz-placeholder, textarea:-moz-placeholder {
+            color: #fff;
+        }
+
+        input::-moz-placeholder, textarea::-moz-placeholder {
+            color: #fff;
+        }
+
+        input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+            color: #fff;
+        }
+
+        .main_show {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            padding: 7% 20px;
+            position: fixed;
+            z-index: 2;
+            /*background-color: rgba(2, 50, 68, 0.21);*/
+        }
+
+        .left_show_div {
+            width: 100%;
+            margin-right: 1%;
+        }
+
+        .right_show_div {
+            width: 24%;
+            margin-left: 37%;
+            padding: 100px 40px;
+            text-align: center;
+            /*box-shadow: -15px 15px 15px rgba(6, 17, 47, 0.7);*/
+            box-shadow: -10px 10px 40px rgba(85, 89, 97, 0.81);
+            opacity: 1;
+            margin-top: 70px;
+
+    -webkit-transition-timing-function: cubic-bezier(0.68, -0.25, 0.265, 0.85);
+    -webkit-transition-property: -webkit-transform,opacity,box-shadow,top,left;
+    transition-property: transform,opacity,box-shadow,top,left;
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;
+    -webkit-transform-origin: 161px 100%;
+    -ms-transform-origin: 161px 100%;
+    transform-origin: 161px 100%;
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    /* border-top: 2px solid #D8312A; */
+    background: #35394a;
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, #35394a), color-stop(100%, rgb(0, 0, 0)));
+    background: -webkit-linear-gradient(230deg, rgba(53, 57, 74, 0) 0%, rgb(0, 0, 0) 100%);
+    /*background: linear-gradient(230deg, rgba(53, 57, 74, 0.04) 0%, rgb(0, 0, 0) 100%);*/
+    background: linear-gradient(230deg, rgba(34, 35, 37, 0.8) 0%, rgb(34, 35, 37) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(53, 57, 74, 0)', endColorstr='rgb(0, 0, 0)',GradientType=1 );
+        }
+
+        .title_span {
+            font-size: 60px;
+            font-family: 幼圆;
+            color: #50fff8;
+            font-weight: 700;
+        }
+
+        .ljc_input {
+            display: block;
+            width: 100%;
+            height: 34px;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #50fff8;
+            background-color: rgba(0, 64, 64, 0.45);
+            background-image: none;
+            border: 1px solid #01caa8;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+            -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        }
+
+        .ljc_input:hover, .ljc_input:focus {
+            border-color: #01e9c4;
+            outline: 0;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(92, 255, 200, 0.6);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(116, 255, 220, 0.6);
+        }
+
+        .login_input {
+            margin-bottom: 20px;
+            padding: 6px 24px;
+            height: 45px;
+            border-radius: 24px;
+            /*width: 350px;*/
+            background-color: transparent;
+
+        }
+        #login {
+            margin-top: 20px;
+            height: 45px;
+            /*background: #fff;*/
+            /*width: 350px;*/
+            border-radius: 30px;
+            font-size: 21px;
+            font-weight: 500;
+            /*color: #12839e;*/
+        }
+    </style>
+</head>
+<body>
+<div class="main_show clearfix">
+    <div id='tag-cloud' style="width: 100%;height: 1080px;position: fixed;z-index: -1"></div>
+
+    <div class="right_show_div" style="display: none;position: absolute;">
+        <div class="clearfix">
+            <span style="font-size: 27px;color: #fff;float: left;margin: 0px 10px 20px;">登录</span>
+            <span style="font-size: 17px;color: #afa5a5;float: left;margin: 10px;">login</span>
+        </div>
+            <input class="ljc_input login_input" placeholder="用户名" type="text" required id="username">
+            <input class="ljc_input login_input" placeholder="密码" type="password" id="password" required>
+            <button class="ljc_input" type="submit" id="login">登录</button>
+            <div class="alert alert-danger alert-dismissible fade in" role="alert" style="width: 100%;margin-top: 20px;display: none">
+                <span type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                        aria-hidden="true">×</span></span>
+                <b style="font-size: 20px">用户名或密码错误！</b>
+            </div>
+    </div>
+    <div class="left_show_div" style="padding: 5% 20%">
+        <h1 class="title_span" style="font-size: 30px;color: #fff;margin-bottom: 50px;font-family: 'Open Sans',sans-serif!important;">SSO单点登录用户系统</h1>
+        <h1 class="title_span" style="font-size: 46px;color: #fff;font-weight: 600;font-family: 'Open Sans',sans-serif!important;">
+            Single Sign On user system
+        </h1>
+        <button type="button" id="nav_btn" class="btn btn-info btn-lg" style="margin-top: 150px;background-color: #00aeef;padding: 10px 30px;letter-spacing: 7px;font-weight: 600;">开启探索</button>
+    </div>
+
+</div>
+<canvas id="canvas"></canvas>
+<!--[if lt IE 8]>
+<script src="./static/tag/assets/global/plugins/respond.min.js"></script>
+<script src="./static/tag/assets/global/plugins/excanvas.min.js"></script>
+<![endif]-->
+<script src="/static/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/static/js/Particleground.js" type="text/javascript"></script>
+<script>
+    var routingUrl = 'http://127.0.0.1:8000';       // 接口服务地址
+
+
+
+
+    $(".main_show").keypress(function (e) {
+        if (e.keyCode === 13) {
+            $("#login").trigger("click");
+        }
+    });
+
+    $("body").on("click", "#nav_btn", function () {
+        $(".right_show_div").slideDown(350);
+    });
+    $("body").on("click", "#login", function () {
+        var local_data = {"username": $("#username").val(), "passwd": $("#password").val()};
+        $.ajax({
+            type: "POST",
+            url: routingUrl +'/user_login',
+            data: local_data,
+            dataType: "json",
+            success: function (data, status) {
+                console.dir(data);
+                var response_data = eval(data);
+                console.log("user_login 成功");
+                console.log(response_data);
+                if (response_data.result) {
+                    // 将用户信息写到本地sessionStorage
+                    sessionStorage.setItem('username', 'username');
+                    window.location.href = routingUrl + '/index';
+                    return false;
+                }
+                else {
+                    $(".alert-danger").show();
+                    setTimeout(function () {
+                        $(".alert-danger").hide();
+                    }, 1000);
+                }
+            },
+            error: function (err) {
+                console.log("user_login 错误");
+            }
+        });
+    });
+</script>
+</body>
+<!-- END BODY -->
+</html>

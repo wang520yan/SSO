@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/index.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/common.css">
+    <link rel="stylesheet" href="/static/css/back_index.css" type="text/css">
+    <style>
+        body{
+            {#background: url('./static/images/bg3.jpg') no-repeat;background-size: 100%;#}
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        li {
+            float: left;
+        }
+
+        li{
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li:hover {
+            background-color: #111;
+        }
+    </style>
+</head>
+<body>
+
+<!--内容页-->
+    <div style="background-color: red">
+        <div style="float: left;width: 100%;">
+            <ul>
+              <li id="index">主页</li>
+              <li id="user">用户</li>
+              <li id="server">服务</li>
+            </ul>
+            <div style="position: absolute; right: 50px; top: 0px">
+                <div class="login-div" style="cursor: pointer;">
+                    <img src="/static/images/head.jpg" style="width: 40px; height: 40px; border-radius: 50%;">
+                    <strong style="color: #0df;" id="username">superadmin</strong>
+                </div>
+                <ul class="login-ul" style="display: none; position: absolute; width: 120px; background-color: teal; z-index: 3; padding: 0; margin: 0; margin-top: 5px;">
+                    <li style="padding:5px 5px; font-size: 17px;" id="logout">注销</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+<div id="table_user" style="display: block">
+    <table border="1">
+        <thead>
+            <tr>
+                <th>用户名</th>
+                <th>真实名</th>
+                <th>性别</th>
+                <th>年龄</th>
+                <th>邮箱</th>
+                <th>地址</th>
+                <th>联系方式</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>admin</td>
+                <td>管理员</td>
+                <td>男</td>
+                <td>24</td>
+                <td>123@qq.com</td>
+                <td>北京</td>
+                <td>1234</td>
+            </tr>
+        </tbody>
+</table>
+</div>
+
+<div class="col-md-12" id="form_user" style="display: none; background-color: #00aeef;">
+{#    <form style="padding: 5px 100px;background-color: #777777e3;width: 800px;line-height: 40px;" class="form-inline">#}
+        <center>用户信息录入表单</center>
+     用户名&nbsp;:&nbsp;&nbsp;<input class="form-control inputclass" type="text" name="user_name" id="user_name">
+    <br>
+        密码&nbsp;:&nbsp;&nbsp;<input class="form-control inputclass" type="password" name="password" id="password">
+    <br>
+        确认密码&nbsp;:&nbsp;&nbsp;<input class="form-control inputclass" type="password" name="password_confirmation" id="password_confirmation">
+    <br>
+{#    </form>#}
+    <button class="btn btn-sm btn-info vis-Comment-user-submit">提交</button>
+</div>
+
+
+<div class="col-md-12" id="form_server" style="display: none; background-color: #00aeef;">
+{#    <form style="padding: 5px 100px;background-color: #777777e3;width: 800px;line-height: 40px;" class="form-inline">#}
+        <center>服务信息录入表单</center>
+     服务名&nbsp;:&nbsp;&nbsp;<input class="form-control inputclass" type="text" name="server_name" id="server_name">
+    <br>
+        服务英文名&nbsp;:&nbsp;&nbsp;<input class="form-control inputclass" type="text" name="server_name_en" id="server_name_en">
+    <br>
+        服务描述&nbsp;:&nbsp;&nbsp;<input class="form-control inputclass" type="text" name="server_description" id="server_description">
+    <br>
+        服务url&nbsp;:&nbsp;&nbsp;<input class="form-control inputclass" type="text" name="server_url" id="server_url">
+    <br>
+{#    </form>#}
+    <button class="btn btn-sm btn-info vis-Comment-server-submit">提交</button>
+</div>
+    <script src="/static/js/jquery-1.9.1.min.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/static/js/common.js"></script>
+    <script src="/static/js/back_index.js"></script>
+</body>
+</html>

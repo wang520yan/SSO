@@ -1,0 +1,224 @@
+body, html {
+    height: 100%;
+    width: 100%;
+  }
+  
+body {
+    /*background-image: url(../images/bg.jpg);*/
+    /* font-family: 方正启体简体,"Microsoft YaHei",微软雅黑,宋体; */
+    font-family: "Microsoft YaHei"
+}
+  
+  /* 模态框 */
+.modal-backdrop {
+    z-index: 2;
+}
+
+p {
+    margin: 0;
+}
+li {
+    list-style: none;
+    color: #fff
+}
+
+a {
+    color: #fff;
+}
+
+/*排序按钮*/
+.range-i {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 18px;
+    color: #fff;
+    padding: 3px;
+}
+
+.range-i-asc {
+    color: #00e3ff;
+    transform: rotateZ(180deg);
+}
+.range-i-dec {
+    color: #00e3ff;
+    transform: rotateZ(0deg);
+}
+
+/* 检索输入框 */
+.vis-keywords {
+    width: 200px !important;
+    color: #fff;
+    padding: 5px 10px;
+    border: 1.5px solid rgba(102, 175, 233, 1);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    border-radius: 5px;
+    background-color: transparent;
+}
+.vis-search {
+    box-shadow: 0 0 10px rgb(24, 185, 255), inset 0 0 5px rgb(24, 185, 255);
+    background-color: #1dafca;
+    color: #fff;
+    border: 1.5px solid rgba(102, 175, 233, 1);
+}
+
+.status-drop>li>a:hover, .nav-drop>li>a:hover{
+    background-color: #1dafca !important;
+    cursor: pointer;
+    color: #fff !important;
+}
+/* 页码 */
+.pagination>li>a {
+    background-color: transparent;
+    color: #fff;
+    border-color: #1dafca;
+}
+.pagination>li>a:hover {
+    background-color: #337ab7;
+    color: #fff;
+    border-color: #1dafca;
+}
+.pagination>.active>a {
+    background-color: #337ab7;
+    border-color: #1dafca;
+}
+.pagination>.active>a:hover {
+    border-color: #1dafca;
+}
+
+/* 日程提醒查看详情按钮 */
+.check-info-detail {
+    box-shadow: 0 0 10px rgb(24, 185, 255), inset 0 0 5px rgb(24, 185, 255);
+    background-color: transparent;
+    color: #fff;
+    border: 1.5px solid rgba(102, 175, 233, 1);
+}
+
+/* 修改面板 */
+.input-group-addon {
+    background: rgba(5, 187, 255, 0.14);
+    border: 1px solid #1df2e7;
+    color: #fff;
+}
+.input-group>.form-control, .comment-desc, .start-comment-desc, .end-comment-desc {
+    background: transparent;
+    border: 1px solid #1df2e7;
+    color: #fff;
+}
+.input-group>.form-control>option{
+    background-color: transparent;
+}
+
+.input-group>select {
+    box-sizing: border-box;
+    width: 122px;
+    font-size: 12px;
+    padding: 3px;
+    background-color: #1e2f33;
+}
+.fun-btn {
+    box-shadow: 0 0 10px rgb(24, 185, 255), inset 0 0 5px rgb(24, 185, 255);
+    background-color: transparent;
+    color: #fff;
+    border: 1.5px solid rgba(102, 175, 233, 1);
+}
+/* 表格去边线 */
+.table>tbody>tr>td {
+    border: none;
+}
+
+/* 显示所有模板标签的div */
+.show-templates-div {
+    display: none;
+    position: absolute;
+    top: 140px;
+    left: -0px;
+    max-height: 340px;
+    width: 610px;
+    border: 1px solid #1dafac;
+    border-radius: 3px;
+    background-color: rgba(30,47,51, 0.94);
+}
+
+/* 存放标签模板 */
+.temp-tags-panel {
+    max-height: 300px;
+    overflow: hidden;
+    overflow-y: auto
+}
+.temp-li {
+    /* display: none; */
+    user-select: none;
+    cursor: pointer;
+    float: left;
+    margin: 5px;
+    padding: 5px 10px;
+    border-radius: 2px;
+    background-color: rgba(23, 200, 218, 0.65);
+}
+
+.temp-i-edit {
+    display: none;
+    color: #ff6303;
+    margin-left: 5px;
+    font-weight: bold
+}
+.temp-i-del {
+    display: none;
+    color: red;
+    margin-left: 2px;
+    font-weight: bold
+}
+.temp-li-selected {
+    background-color: #a94442;
+}
+/* 模板修改面板 */
+.modify-temp-div {
+    display: none;
+    position: absolute;
+    top: 165px;
+    right: 25px;
+    max-height: 340px;
+    width: 610px;
+    border: 1px solid #1dafac;
+    border-radius: 3px;
+    background-color: rgba(30,47,51, 0.94);
+    z-index: 2
+}
+
+/* 任务进度总览 */
+.xAxis-overview path,
+.xAxis-overview line {
+    fill: none;
+    stroke: #1dafac;
+    stroke-width: 2;
+    shape-rendering: crispEdges
+}
+
+.xAxis-overview text {
+    fill: #00e3ff;
+    font-family: sans-serif;
+    font-size: 11px;
+}
+
+/* 负责人和审核人状态为点击状态 */
+.partner-checkman-active {
+    background-color: #18b9ff !important;
+}
+
+/* 信息展示模态框 */
+.show-tip-modal {
+    z-index: 1051;
+}
+
+/* 审核人的显示 */
+.comment-checkman-show-span {
+    margin-left: 3px;
+    font-size: 14px;
+}
+
+/* 注销 */
+
+#logout:hover{
+    cursor: pointer;
+    background-color: #18b9ff
+}

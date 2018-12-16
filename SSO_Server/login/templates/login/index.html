@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/index.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/common.css">
+    <link rel="stylesheet" href="/static/css/back_index.css" type="text/css">
+    <style>
+        body{
+            {#background: url('./static/images/bg3.jpg') no-repeat;background-size: 100%;#}
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        li {
+            float: left;
+        }
+
+        li{
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li:hover {
+            background-color: #111;
+        }
+    </style>
+</head>
+<body>
+
+<!--内容页-->
+    <div style="background-color: red;position: absolute;top:0px;width: 100%;height: 48px;">
+        <div style="float: left;width: 100%;">
+            <ul>
+              <li id="index">主页</li>
+              <li id="user">用户</li>
+              <li id="server">服务</li>
+            </ul>
+            <div style="position: absolute; right: 50px; top: 0px">
+                <div class="login-div" style="cursor: pointer;">
+                    <img src="/static/images/head.jpg" style="width: 40px; height: 40px; border-radius: 50%;">
+                    <strong style="color: #0df;" id="username">superadmin</strong>
+                </div>
+                <ul class="login-ul" style="display: none; position: absolute; width: 120px; background-color: teal; z-index: 3; padding: 0; margin: 0; margin-top: 5px;">
+                    <li style="padding:5px 5px; font-size: 17px;" id="logout">注销</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+<div id="table_user" style="display: block;height: 300px;position: absolute;top:48px;width: 100%">
+    <div style="background-color: #00e3ff; width: 100px;height: 100px;float: left;margin: 100px;">
+        <img src="/static/images/test1.jpg" style="height: 100px;width: 100px;" href="http://192.168.1.10:7006/login">
+    </div>
+    <div style="background-color: #00e3ff; width: 100px;height: 100px;float: left;margin: 100px;">
+        <img src="/static/images/test1.jpg" style="height: 100px;width: 100px;" href="http://192.168.1.10:7006/login">
+    </div>
+    <div style="background-color: #00e3ff; width: 100px;height: 100px;float: left;margin: 100px;">
+        <img src="/static/images/test1.jpg" style="height: 100px;width: 100px;" href="http://192.168.1.10:7006/login">
+    </div>
+</table>
+</div>
+    <script src="/static/js/jquery-1.9.1.min.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/static/js/common.js"></script>
+    <script src="/static/js/index.js"></script>
+</body>
+</html>
